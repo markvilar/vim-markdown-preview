@@ -58,6 +58,10 @@ if !exists("g:vim_markdown_preview_hotkey")
     let g:vim_markdown_preview_hotkey='<C-p>'
 endif
 
+if !exists("g:vim_markdown_preview_colorscheme")
+    let g:vim_markdown_preview_colorscheme=''
+endif
+
 function! Vim_Markdown_Preview()
   let b:curr_file = expand('%:p')
 
@@ -72,6 +76,10 @@ function! Vim_Markdown_Preview()
   endif
   if v:shell_error
     echo 'Please install the necessary requirements: https://github.com/JamshedVesuna/vim-markdown-preview#requirements'
+  endif
+
+  if g:vim_markdown_preview_colorscheme ==? 'solarized-dark'
+    call system('echo -e "<style> body { background-color: #002B36; color: #93A1A1; } </style> \n$(cat /tmp/vim-markdown-preview.html)" > /tmp/vim-markdown-preview.html')
   endif
 
   if g:vmp_osname == 'unix'

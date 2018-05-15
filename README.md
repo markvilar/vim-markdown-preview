@@ -176,6 +176,18 @@ Example: Use `xdg-open`.
 let vim_markdown_preview_use_xdg_open=1
 ```
 
+<a name='colorscheme'></a>
+### The `vim_markdown_preview_colorscheme` option
+
+Render preview with the given colorscheme. Options are `solarized-dark` and `''` (empty string, meaning black font on white background).
+
+Default: `''`
+
+Example: Use `solarized-dark` colorscheme.
+```vim
+let vim_markdown_preview_colorscheme='solarized-dark'
+```
+
 Behind The Scenes
 -----------------
 
